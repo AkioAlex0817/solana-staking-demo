@@ -1,0 +1,20 @@
+[features]
+seeds = false
+[programs.localnet]
+alex_solana_staking = "5XDKq2QwrKwkJuBKR3udSDW3NjkXsBjUMZ6ZBLEA7CVn"
+
+[programs.devnet]
+alex_solana_staking = "5XDKq2QwrKwkJuBKR3udSDW3NjkXsBjUMZ6ZBLEA7CVn"
+
+[programs.mainnet]
+alex_solana_staking = "5XDKq2QwrKwkJuBKR3udSDW3NjkXsBjUMZ6ZBLEA7CVn"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "localnet"
+wallet = "/Users/alex/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
