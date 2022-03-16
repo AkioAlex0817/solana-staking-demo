@@ -39,7 +39,7 @@ describe("alex-solana-staking", () => {
         program.addEventListener('LogHandler', (e, s) => {
             console.log("Amount: ", e.amount.toString());
         });
-        let rawData = fs.readFileSync('/Users/alex/1.BlockChain/Tutorial/alex-solana-staking/tests/keys/fromToken.json', "utf-8");
+        let rawData = fs.readFileSync('/home/alex/blockchain/solana-staking-demo/tests/keys/fromToken.json', "utf-8");
         let keyData = JSON.parse(rawData);
         xTokenMintKey = anchor.web3.Keypair.fromSecretKey(new Uint8Array(keyData));
         //xTokenMintKey = anchor.web3.Keypair.generate();
@@ -47,7 +47,7 @@ describe("alex-solana-staking", () => {
         xTokenMintPubkey = xTokenMintObject.publicKey;
         console.log("XTokenPubKey: ", xTokenMintPubkey.toString());
         [poolPubkey, poolBump] = await anchor.web3.PublicKey.findProgramAddress([xTokenMintPubkey.toBuffer()], program.programId);
-        rawData = fs.readFileSync('/Users/alex/1.BlockChain/Tutorial/alex-solana-staking/tests/keys/toToken.json', "utf-8");
+        rawData = fs.readFileSync('/home/alex/blockchain/solana-staking-demo/tests/keys/toToken.json', "utf-8");
         keyData = JSON.parse(rawData);
         yTokenMintKey = anchor.web3.Keypair.fromSecretKey(new Uint8Array(keyData));
         //yTokenMintKey = anchor.web3.Keypair.generate();
